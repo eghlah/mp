@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Marketplace</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+    $(function() {
+
+      $(document).on("click", ".btn-sm", function(e) {
+        //$('#survey_form').submit(function(e) {
+        e.preventDefault();
+
+        // getting the value
+        var selc = $(this).val();
+        $('#item').val(selc);
+
+        //alert(dress);
+
+      });
+    });
+  </script>
+  <script>
+    $(function() {
+
+
+      $("#result").hide();
+
+      //$(document).on("click", ".btng", function(e) {
+      $('#submit_form').submit(function(e) {
+        e.preventDefault();
+
+        // getting the value
+        var firstname = $("#firstname").val();
+        var middlename = $("#middlename").val()
+        var lastname = $("#lastname").val();
+        var itemx = $("#item").val();
+        var address = $("#address").val();
+
+        $('#r_firstname').html(firstname);
+        $('#r_middlename').html(middlename);
+        $('#r_lastname').html(lastname);
+        $('#r_address').html(address);
+        $('#r_item').html(itemx);
+
+        $("#result").show();
+
+      });
+    });
+  </script>
+  <style>
+    body {
+      padding-top: 70px;
+      /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    }
+
+    .slide-image {
+      width: 100%;
+    }
+
+    .carousel-holder {
+      margin-bottom: 30px;
+    }
+
+    .carousel-control,
+    .item {
+      border-radius: 4px;
+    }
+
+    .caption {
+      height: 130px;
+      overflow: hidden;
+    }
+
+    .caption h4 {
+      white-space: nowrap;
+    }
+
+    .thumbnail img {
+      width: 100%;
+    }
+
+    .ratings {
+      padding-right: 10px;
+      padding-left: 10px;
+      color: #d17581;
+    }
+
+    .thumbnail {
+      padding: 0;
+    }
+
+    .thumbnail .caption-full {
+      padding: 9px;
+      color: #333;
+    }
+
+    footer {
+      margin: 50px 0;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+        <a class="navbar-brand" href="#">D Beauty Shop</a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <!--          <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>-->
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-md-3">
+        <p class="lead">Doreen beauty shop</p>
+        <div class="list-group">
+          <img src="images/1.jpg" width="100%" alt="" />
+
+
+
+          <!-- Result starts-->
+          <div id="result">
+
+            <div class="panel-group">
+              <div class="panel panel-default">
+                <div class="panel-body">Purchase receipt</div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-body">
+
+                  <strong>Hi:</strong> <span style="color:green;" id="r_firstname"></span> <span style="color:green;" id="r_middlename"></span> <span style="color:green;" id="r_lastname"></span> <br>
+
+                  <strong>Thank you for buying <span style="color:green;" id="r_item"></span></strong> <br>
+
+                  <strong>Your delivery address is:    <span style="color:green;"  id="r_address"></span></strong>
+
+
+                  <button style="width:100%" class="btn btn-success ">Print receipt</button>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+          <!-- Result ends-->
+
+
+
+        </div>
+      </div>
+
+      <div class="col-md-9">
+
+        <div class="row">
+
+          <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+              <img src="images/2.jpg" alt="">
+              <div class="caption">
+                <h4 class="pull-right">Ksh2499</h4>
+                <h4><a href="#">Grey dress</a>
+                                </h4>
+                <p>Beautiful grey dress for wedding, dates and occassions.</p>
+              </div>
+              <div class="ratings">
+                <button style="width:100%" id="dress" type="button" value="grey dress @ksh2499" class="btn btn-success  btn-sm">Select to buy</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+              <img src="images/3.jpg" alt="">
+              <div class="caption">
+                <h4 class="pull-right">Ksh6499</h4>
+                <h4><a href="#">Diamond shoes</a>
+                                </h4>
+                <p>Beautiful diamond shoes for occassions</p>
+              </div>
+              <div class="ratings">
+                <button style="width:100%" id="shoes" type="button" value="Diamond shoes @ksh6499" class="btn btn-success  btn-sm">Select to buy</button>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+              <img src="images/5.jpg" alt="">
+              <div class="caption">
+                <h4 class="pull-right">ksh7499</h4>
+                <h4><a href="#">Pink casio watch</a>
+                                </h4>
+                <p>Beautiful pink leather watch for ladies.</p>
+              </div>
+              <div class="ratings">
+                <button style="width:100%" id="watch" type="button" value="Pink casio watch @ksh7499" class="btn btn-success  btn-sm">Select to buy</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+              <img src="images/4.jpg" alt="">
+              <div class="caption">
+                <h4 class="pull-right">ksh8499</h4>
+                <h4><a href="#">Hand bag</a>
+                                </h4>
+                <p>Beautiful hand bag for travelling.</p>
+              </div>
+              <div class="ratings">
+                <button style="width:100%" id="bag" type="button" value="Hand bag @ksh8499" class="btn btn-success  btn-sm">Select to buy</button>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-sm-8 col-lg-8 col-md-8">
+            <h4><a href="#">Select product you want to purchase then fill the form to submit </a>
+                        </h4>
+
+            <div style="padding:5px;" class="panel panel-default">
+
+              <form class="form-inline" id="submit_form">
+                <h3>Product info </h3>
+                <label for="item">Product to buy:</label><br>
+                <input readonly required style="width:90%; border-radius:0px; display:inline;" placeholder="Select product" type="text" class="form-control" id="item">
+
+
+                <h3>Personal information</h3>
+
+                <label for="firstname">Your full name:</label><br>
+                <input required style="width:30%; border-radius:0px; display:inline;" placeholder="Firstname" type="text" class="form-control" id="firstname">
+                <input required style="width:30%; border-radius:0px; display:inline;" placeholder="Middlename" type="text" class="form-control" id="middlename">
+                <input required style="width:30%; border-radius:0px; display:inline;" placeholder="Lastname" type="text" class="form-control" id="lastname">
+
+                <br>
+
+                <label for="address">address contact:</label><br>
+                <input required style="width:92%; border-radius:0px; display:inline;" placeholder="your address" type="text" class="form-control" id="address"><br>
+
+                <hr>
+
+                <button type="submit" class="btn btn-info">Submit your order</button>
+
+              </form>
+            </div>
+
+
+          </div>
+
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <!-- /.container -->
+
+  <div class="container">
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+      <div class="row">
+        <div class="col-lg-12">
+          <p> &copy; Marketplace</p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+  <!-- /.container -->
+
+
+</body>
+
+</html>
